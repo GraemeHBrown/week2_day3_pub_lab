@@ -8,6 +8,12 @@ attr_reader :name, :till, :drinks
     @drinks = drinks
   end
 
+  def pub_has_drink?(drink_name)
+    for drink in @drinks
+      return true if drink.name == drink_name
+    end
+    return false
+  end
 
 
 end

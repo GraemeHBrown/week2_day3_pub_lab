@@ -26,4 +26,12 @@ class TestPub < MiniTest::Test
     assert_equal(@drinks, @pub.drinks)
   end
 
+  def test_has_specific_drink__true
+    assert_equal(true, @pub.pub_has_drink?('Guiness'))
+  end
+
+  def test_has_specific_drink__false
+    assert_equal(false, @pub.pub_has_drink?('White Wine'))
+  end
+
 end
