@@ -15,5 +15,8 @@ attr_reader :name, :till, :drinks
     return false
   end
 
+  def add_money_to_till(value)
+    return @till += value
+  end
 
 end

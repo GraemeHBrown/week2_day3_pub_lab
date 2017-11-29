@@ -34,4 +34,11 @@ class TestPub < MiniTest::Test
     assert_equal(false, @pub.pub_has_drink?('White Wine'))
   end
 
+  def test_add_money_to_till()
+    before_value = @pub.till()
+    @pub.add_money_to_till(5)
+    after_value = @pub.till()
+    assert_equal(before_value+5, after_value)
+  end
+
 end
