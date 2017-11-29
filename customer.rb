@@ -11,12 +11,6 @@ class Customer
      return @wallet -= value
   end
 
-  def buy_drink_from_pub(pub, drink_name)
-    price = find_drink_price(pub, drink_name)
-    take_money_from_wallet(price)
-    pub.add_money_to_till(price)
-  end
-
   def find_drink_price(pub, drink_name)
     for drink in pub.drinks()
       if pub.pub_has_drink?(drink_name)
@@ -24,6 +18,13 @@ class Customer
       end
     end
   end
+  
+  def buy_drink_from_pub(pub, drink_name)
+    price = find_drink_price(pub, drink_name)
+    take_money_from_wallet(price)
+    pub.add_money_to_till(price)
+  end
+
 
 
 end

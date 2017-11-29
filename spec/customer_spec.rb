@@ -30,11 +30,17 @@ class TestCustomer < MiniTest::Test
     assert_equal(before_value-5, after_value)
   end
 
-  def test_duy_drink_from_pub
+  def test_find_drink_price
+    @first_customer.find_drink_price(@pub, 'Guiness')
+    assert_equal(3.50, @first_drink.price)
+  end
+
+  def test_buy_drink_from_pub
     @first_customer.buy_drink_from_pub(@pub, @first_drink.name())
     assert_equal(16.50, @first_customer.wallet())
     assert_equal(53.50, @pub.till())
   end
+
 
 
 end
